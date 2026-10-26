@@ -1,0 +1,71 @@
+:root{
+  --paper:#f7f4ee; --ink:#191713; --muted:#6f6a60; --line:#e2dccf;
+  --accent:#a8762a; --card:#fffdf8; --ok:#3f7d4e; --wait:#a8762a; --deny:#a33d33;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#14130f; --ink:#eae5da; --muted:#9b968a; --line:#2a2822;
+         --accent:#d4a04a; --card:#1b1a15; --ok:#7fb98c; --wait:#d4a04a; --deny:#d98a80; }
+}
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+  font-size:17px; line-height:1.95; letter-spacing:.01em;
+  background-image:radial-gradient(60% 50% at 25% -10%, rgba(200,150,60,.14), transparent 70%);
+  background-repeat:no-repeat;
+}
+.wrap{ max-width:660px; margin:0 auto; padding:56px 24px 96px; }
+header.site{ display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  border-bottom:1px solid var(--line); padding-bottom:16px; margin-bottom:48px; }
+header.site a.brand{ color:var(--ink); text-decoration:none; font-weight:600; letter-spacing:.12em; }
+nav a{ color:var(--muted); text-decoration:none; margin-left:18px; font-size:14px;
+  font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif; }
+nav a:hover{ color:var(--accent); }
+h1{ font-size:2.1rem; line-height:1.35; margin:0 0 8px; font-weight:600; letter-spacing:.06em; }
+.sub{ color:var(--muted); font-family:-apple-system,"PingFang SC",sans-serif; font-size:13px;
+  letter-spacing:.18em; text-transform:uppercase; margin-bottom:40px; }
+h2{ font-size:1.28rem; margin:0 0 10px; font-weight:600; letter-spacing:.04em; }
+p{ margin:0 0 1.1em; }
+.lead p{ font-size:1.06rem; }
+.mono{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+  letter-spacing:0; color:var(--muted); }
+a{ color:var(--accent); }
+.philo{ border-left:2px solid var(--accent); padding-left:18px; margin:40px 0; color:var(--muted); }
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:0 0 40px; }
+.stat{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+.stat .k{ font-family:-apple-system,"PingFang SC",sans-serif; font-size:12px; color:var(--muted); }
+.stat .v{ font-size:1.3rem; margin-top:4px; letter-spacing:.02em; }
+table{ width:100%; border-collapse:collapse; font-family:-apple-system,"PingFang SC",sans-serif;
+  font-size:14px; margin:8px 0 40px; }
+th{ text-align:left; font-weight:500; color:var(--muted); font-size:12px; letter-spacing:.1em;
+  border-bottom:1px solid var(--line); padding:8px 10px; }
+td{ border-bottom:1px solid var(--line); padding:11px 10px; vertical-align:top; }
+td.t{ white-space:nowrap; color:var(--muted); font-size:12.5px; }
+td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.tag{ display:inline-block; font-size:12px; padding:1px 9px; border-radius:999px;
+  border:1px solid currentColor; white-space:nowrap; }
+.tag.ok{ color:var(--ok); } .tag.wait{ color:var(--wait); } .tag.deny{ color:var(--deny); }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:20px 22px; margin:0 0 14px; }
+.card-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.card h3{ font-size:1.05rem; margin:0 0 6px; font-weight:600; }
+.reason{ color:var(--muted); font-size:.95rem; margin:0 0 14px; }
+.card-foot{ display:flex; justify-content:space-between; align-items:center; }
+.big{ font-size:1.35rem; color:var(--ink); }
+.btn{ font-family:-apple-system,"PingFang SC",sans-serif; font-size:13px; text-decoration:none;
+  border:1px solid var(--accent); color:var(--accent); padding:6px 16px; border-radius:999px; }
+.btn:hover{ background:var(--accent); color:var(--paper); }
+.note{ border-top:1px solid var(--line); padding:32px 0; }
+.note:first-of-type{ border-top:none; padding-top:0; }
+.note-meta{ margin-bottom:6px; }
+.empty{ color:var(--muted); border:1px dashed var(--line); border-radius:10px;
+  padding:28px; text-align:center; font-size:.95rem; }
+footer.site{ margin-top:64px; padding-top:20px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:12.5px; font-family:-apple-system,"PingFang SC",sans-serif;
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+@media (max-width:560px){
+  .stats{ grid-template-columns:repeat(2,1fr); }
+  h1{ font-size:1.7rem; }
+  .wrap{ padding:36px 18px 72px; }
+}
